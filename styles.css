@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  color: #29292e;
+}
+
+body, input, button, textarea {
+  font: 400 16px, sans-serif;
+}
+
+#page-auth {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+   
+}
+
+aside {
+  flex: 1;
+
+  background-color: lightcoral;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 120px;
+
+}
+
+#logo {
+  max-width: 600px;
+}
+
+main {
+  flex: 1;
+
+  padding: 0, 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#formulario {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  align-items: stretch;
+  text-align: center;
+}
+
+input {
+  height: 50px;
+  border-radius: 8px;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid #a8a8b3;
+}
+
+button {
+  margin-top: 16px;
+}
+
+button, input {
+  width: 100%;
+}
+
+.separator {
+  font-size: 20px;
+  color: #29292e;
+  
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+}
+
+.separator::before {
+   content: '';
+   flex: 1;
+   height: 1px;
+   background: #a8a8b3;
+   margin-right: 16px;
+}
+
+.separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #a8a8b3;
+  margin-left: 16px;
+}

@@ -23,17 +23,18 @@ body, input, button, textarea {
 aside {
   flex: 1;
 
-  background-color: lightcoral;
+  background-color: #f08080;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 120px 120px;
 
 }
 
 #logo {
-  max-width: 600px;
+  max-width: 450px;
 }
 
 main {
@@ -65,6 +66,20 @@ input {
 
 button {
   margin-top: 16px;
+  height: 50px;
+  border-radius: 8px;
+  font-weight: 500;
+  background: #f08080;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  border: 0;
+
+  transition: filter 0.2s;
 }
 
 button, input {
@@ -72,10 +87,10 @@ button, input {
 }
 
 .separator {
-  font-size: 20px;
+  font-size: 14px;
   color: #29292e;
   
-  margin: 32px 0;
+  margin: 20px 0;
   display: flex;
   align-items: center;
 }

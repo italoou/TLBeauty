@@ -11,11 +11,15 @@ import { RippleModule } from 'primeng/ripple';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToolbarModule} from 'primeng/toolbar';
 import { CardModule } from 'primeng/card';
+import { LoginComponent } from './login/login.component';
+import { ClienteDetailComponent } from './cliente-detail/cliente-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClientesComponent
+    ClientesComponent,
+    LoginComponent,
+    ClienteDetailComponent
   ],
   imports: [
     BrowserModule,

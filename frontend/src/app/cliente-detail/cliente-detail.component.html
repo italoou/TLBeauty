@@ -1,1 +1,37 @@
-<p>cliente-detail works!</p>
+<div class="toolbar">
+  <a><img src="../assets/Logotipo-sem-fundo-preta.png" alt=""></a>
+</div>
+
+<div class="content">
+  <div class="clienteCard"> 
+    <p-card>
+      <ng-template pTemplate="title">
+        <span>{{cliente.nome}}</span>
+      </ng-template>
+      <ng-template pTemplate="subtitle">
+        <span>{{cliente.dataNasc}}</span>
+      </ng-template>
+      Ultima Visita: {{cliente.ultimaVis}}
+      <ng-template pTemplate="footer">
+        <!-- <a routerLink="/clientes/1"><button pButton pRipple type="button" label="Historico" class="p-button-rounded p-button-info" icon="pi pi-book" iconPos="left"></button></a> -->
+        <button pButton pRipple type="button" label="Adicionar Venda" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left"></button>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
+
+<div class="content">
+  <ul>
+    <li *ngFor="let comanda of cliente.comandas">
+        <p-card>
+          <ng-template pTemplate="title">
+            valor: {{comanda.valorTotal}}
+          </ng-template> 
+          data: {{comanda.data}}             
+          <ng-template pTemplate="footer">
+          forma de pagamento: {{comanda.formaDePagamento}}
+          </ng-template>
+        </p-card>
+      </li>
+    </ul>
+</div>

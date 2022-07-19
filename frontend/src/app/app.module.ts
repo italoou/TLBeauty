@@ -13,13 +13,16 @@ import { ToolbarModule} from 'primeng/toolbar';
 import { CardModule } from 'primeng/card';
 import { LoginComponent } from './login/login.component';
 import { ClienteDetailComponent } from './cliente-detail/cliente-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientesComponent,
     LoginComponent,
-    ClienteDetailComponent
+    ClienteDetailComponent,
+    ClienteCadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { ClienteDetailComponent } from './cliente-detail/cliente-detail.componen
     RippleModule,
     InputTextModule,
     ToolbarModule,
-    CardModule
+    CardModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const ClientesController = require('./controllers/ClientesControler');
+const LoginController = require('./controllers/LoginController');
+const cors = require('cors');
 
 // Apenas para teste
 router.get('/', (req, res) => {
@@ -7,6 +9,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/clientes', ClientesController.getClientes);
+router.get('/cliente/:id', ClientesController.getCliente);
+router.post('/clientes', ClientesController.addClientes);
+router.post('/login', LoginController.logar);
 
 
 // router.post('/atracao', AttractionController.save);

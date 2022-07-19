@@ -11,111 +11,32 @@
   <span class="p-input-icon-left">
     <i class="pi pi-search"></i>
     
-    <input pInputText type="text" placeholder="Digite o nome do cliente" class="searchInput">
+    <input pInputText type="text" placeholder="Digite o nome do cliente" class="searchInput" #nomeCliente>
   </span>
   <button pButton type="button" label="Buscar" class="p-button-rounded" icon="pi pi-search" iconPos="left"></button>
-  <button pButton pRipple type="button" label="Cadastrar cliente" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left"></button>
+  <a routerLink="/cadastrar/cliente">
+    <button pButton pRipple type="button" label="Cadastrar cliente" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left" ></button>
+  </a>
 </div>
 
 <div class="content">
   <ul>
-    <li>
-      <!-- <div class="clientslist">
-        <button pButton pRipple type="button" label="Aniversario: 09/11/1999" class="p-button-rounded">
-            
-        </button>
-
-      </div> -->
-    <div class="clienteCard">
-      <!-- <a> -->
-      <p-card>
-        <ng-template pTemplate="title">
-          <span>Italo Teixeira de Lima</span>
-        </ng-template>
-        <ng-template pTemplate="subtitle">
-          <span>09/11/1999</span>
-        </ng-template>
-        Ultima Visita: 24/05/2022
-        <ng-template pTemplate="footer">
-          <a routerLink="/clientes/1"><button pButton pRipple type="button" label="Historico" class="p-button-rounded p-button-info" icon="pi pi-book" iconPos="left"></button></a>
-          <button pButton pRipple type="button" label="Adicionar Venda" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left"></button>
-        </ng-template>
-      </p-card>
-    </div>
-    
-  </li><li>
-      <div class="clienteCard">
-        <!-- <a> -->
-        <p-card>
-          <ng-template pTemplate="title">
-            <span>Italo Teixeira de Lima</span>
-          </ng-template>
-          <ng-template pTemplate="subtitle">
-            <span>09/11/1999</span>
-          </ng-template>
-          Ultima Visita: 24/05/2022
-          <ng-template pTemplate="footer">
-            <button pButton pRipple type="button" label="Historico" class="p-button-rounded p-button-info" icon="pi pi-book" iconPos="left"></button>
-  
-            <button pButton pRipple type="button" label="Adicionar" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left"></button>
-          </ng-template>
-        </p-card>
-      </div>
-    </li><li>
-      <div class="clienteCard">
-        <!-- <a> -->
-        <p-card>
-          <ng-template pTemplate="title">
-            <span>Italo Teixeira de Lima</span>
-          </ng-template>
-          <ng-template pTemplate="subtitle">
-            <span>09/11/1999</span>
-          </ng-template>
-          Ultima Visita: 24/05/2022
-          <ng-template pTemplate="footer">
-            <button pButton pRipple type="button" label="Historico" class="p-button-rounded p-button-info" icon="pi pi-book" iconPos="left"></button>
-  
-            <button pButton pRipple type="button" label="Adicionar Venda" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left"></button>
-          </ng-template>
-        </p-card>
-      </div>
-    </li><li>
-      <div class="clienteCard">
-        <!-- <a> -->
-        <p-card>
-          <ng-template pTemplate="title">
-            <span>Italo Teixeira de Lima</span>
-          </ng-template>
-          <ng-template pTemplate="subtitle">
-            <span>09/11/1999</span>
-          </ng-template>
-          Ultima Visita: 24/05/2022
-          <ng-template pTemplate="footer">
-            <button pButton pRipple type="button" label="Historico" class="p-button-rounded p-button-info" icon="pi pi-book" iconPos="left"></button>
-  
-            <button pButton pRipple type="button" label="Adicionar Venda" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left"></button>
-          </ng-template>
-        </p-card>
-      </div>
-    </li>
-    <li>
-      <div class="clienteCard">
-        <!-- <a> -->
-        <p-card>
-          <ng-template pTemplate="title">
-            <span>Italo Teixeira de Lima</span>
-          </ng-template>
-          <ng-template pTemplate="subtitle">
-            <span>09/11/1999</span>
-          </ng-template>
-          Ultima Visita: 24/05/2022
-          <ng-template pTemplate="footer">
-            <button pButton pRipple type="button" label="Historico" class="p-button-rounded p-button-info" icon="pi pi-book" iconPos="left"></button>
-  
-            <button pButton pRipple type="button" label="Adicionar Venda" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left"></button>
-          </ng-template>
-        </p-card>
-      </div>
-    </li>
-  </ul>
+    <li *ngFor="let cliente of clientes">
+        <div class="clienteCard"> 
+          <p-card>
+            <ng-template pTemplate="title">
+              <span>{{cliente.nome}}</span>
+            </ng-template>
+            <ng-template pTemplate="subtitle">
+              <span>{{cliente.dataNasc}}</span>
+            </ng-template>
+            Ultima Visita: {{cliente.ultimaVis}}
+            <ng-template pTemplate="footer">
+              <a routerLink="/clientes/{{cliente.id}}"><button pButton pRipple type="button" label="Historico" class="p-button-rounded p-button-info" icon="pi pi-book" iconPos="left"></button></a>
+              <button pButton pRipple type="button" label="Adicionar Venda" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left"></button>
+            </ng-template>
+          </p-card>
+        </div>
+      </li>
+    </ul>
 </div>

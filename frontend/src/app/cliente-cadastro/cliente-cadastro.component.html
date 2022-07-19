@@ -1,0 +1,20 @@
+<div class="toolbar">
+  <a><img src="../assets/Logotipo-sem-fundo-preta.png" alt=""></a>
+</div>
+
+<!-- <p-toolbar>
+
+</p-toolbar> -->
+
+
+<div class="content">
+  <!-- <span class="p-input-icon-left"> -->
+    <!-- <i class="pi pi-search"></i> -->
+    <label for="nome">Nome</label>
+    <input pInputText type="text" placeholder="Digite o nome do cliente" class="searchInput" id="nome" #nomeCliente>
+    <label for="dataNasc">Data de Nascimento</label>
+    <input pInputText type="date" class="searchInput" id="dataNasc" #dataNascCliente>
+  <!-- </span> -->
+  <!-- <button pButton type="button" label="Buscar" class="p-button-rounded" icon="pi pi-search" iconPos="left"></button> -->
+  <button pButton pRipple type="button" label="Cadastrar cliente" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left" (click)="addCliente(nomeCliente.value, dataNascCliente.value); nomeCliente.value=''; dataNascCliente.value=''"></button>
+</div>

@@ -84,12 +84,12 @@ p {
 }
 
 .content {
-  display: list-item;
+  display: flex;
   margin: 82px auto 32px;
   padding: 10px 16px;
   max-width: 1300px;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   background-color: #F08080;
   color: white;
   border-radius: 15px;
@@ -117,30 +117,6 @@ svg.material-icons:not(:last-child) {
 
 .card svg.material-icons path {
   fill: #888;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 16px;
-}
-
-.card {
-  all: unset;
-  border-radius: 4px;
-  border: 1px solid #eee;
-  background-color: #fafafa;
-  height: 40px;
-  width: 200px;
-  margin: 0 8px 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-  line-height: 24px;
 }
 
 .card-container .card:not(:last-child) {
@@ -279,157 +255,46 @@ svg#clouds {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 767px) {
-  .card-container > *:not(.circle-link) ,
-  .terminal {
-    width: 100%;
-  }
+:host ::ng-deep .p-button {
+  margin-right: .5rem;
+}
 
-  .card:not(.highlight-card) {
-    height: 16px;
-    margin: 8px 0;
-  }
-
-  .card.highlight-card span {
-    margin-left: 72px;
-  }
-
-  svg#rocket-smoke {
-    right: 120px;
-    transform: rotate(-5deg);
+:host ::ng-deep .p-buttonset {
+  .p-button {
+      margin-right: 0;
   }
 }
 
-@media screen and (max-width: 575px) {
-  svg#rocket-smoke {
-    display: none;
-    visibility: hidden;
-  }
-}
-
-@media screen and (max-width: 800px) {
-
-  button {
+:host ::ng-deep .sizes {
+  .button {
       margin-bottom: .5rem;
-      
-    
+      display: block;
+
+      &:last-child {
+          margin-bottom: 0;
+      }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .p-button {
+      margin-bottom: .5rem;
+
       &:not(.p-button-icon-only) {
-          // display: flex;
-          // width: 100%;
-          ::ng-deep{
-            .p-button-label{
-            display: none;
-            }
-          }
+          display: flex;
+          width: 100%;
       }
   }
 
   .p-buttonset {
-    .p-button {
-        margin-bottom: 0;
-    }
+      .p-button {
+          margin-bottom: 0;
+      }
   }
-
 }
-
-/* button {
-  margin-top: 10px;
-  margin-right: .5rem;
-  background-color: #eee;
-  padding: 0.1rem;
-  border-radius: 4px;
-  font-size: 1rem;
-} */
 
 button{
   margin: 5px;
   
 }
 
-span{
-  margin: 5px;
-}
-
-.clients {
-  background-color: white;
-  max-width: 500px;
-}
-
-span{
-  color: black;
-}
-
-a{
-  // background-color: white;
-  // border: black;
-  align-items: center;
-  
-}
-
-.searchInput{
-max-width: 800px;
-width: 100%;
-}
-
-.clientslist{
-background-color: black;
-height: auto;
-width: 100%;
-border-radius: 10px;
-}
-
-li{
-max-width: 400px;
-width: 100%;
-position: relative;
-cursor: pointer;
-border-radius: 20px;
-// background-color: black;
-margin-top: 20px;
-margin-bottom: 20px;
-float: left;
-
-}
-
-
-
-
-li:hover {
-left: .1em;
-}
-
-p-card{
-width: 500px;
-height: 500px;
-border-radius: 20;
-
-
-}
-
-.clienteCard{
-border-radius: 50%;
-}
-
-// .contentClients{
-//   background-color: #F08080;
-//   min-height: 500px;
-
-// }
-
-::ng-deep{
-.p-card{
-  background-image: url("../../assets/Md1.png");
-  background-size: 100%;
-  background-position: 0;
-  // background-color: #F08080;
-  width: 350px;
-
-  margin-top: 10px;
-  color: blue;
-}
-ul{
-  overflow: auto;
-}
-li{
-}
-}

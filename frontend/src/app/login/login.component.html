@@ -10,14 +10,15 @@
           Usuário
         </div>
         <input type="text"
-             placeholder="Digite o seu login"/>
+             placeholder="Digite o seu login" #user/>
         <div class="separator">
           Senha
         </div>
         <input type="password"
-             placeholder="Digite o seu senha"/>
-             <a routerLink="/clientes"><button pButton type="button" label="Entrar" class="p-button-rounded pink">
+             placeholder="Digite o seu senha" #password/>
+             <button pButton type="button" label="Entrar" class="p-button-rounded pink" (click)="logar(user.value, password.value); password.value=''">
           
-        </button></a>
+        </button>
+        <!-- <a routerLink="/clientes"></a> -->
     </div>
   </main>

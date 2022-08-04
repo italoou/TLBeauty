@@ -1,20 +1,17 @@
-<div class="toolbar">
-  <a><img src="../assets/Logotipo-sem-fundo-preta.png" alt=""></a>
-</div>
-
-<!-- <p-toolbar>
-
-</p-toolbar> -->
-
+<app-toolbar></app-toolbar>
 
 <div class="content">
-  <!-- <span class="p-input-icon-left"> -->
-    <!-- <i class="pi pi-search"></i> -->
-    <label for="nome">Nome</label>
-    <input pInputText type="text" placeholder="Digite o nome do cliente" class="searchInput" id="nome" #nomeCliente>
-    <label for="dataNasc">Data de Nascimento</label>
-    <input pInputText type="date" class="searchInput" id="dataNasc" #dataNascCliente>
-  <!-- </span> -->
-  <!-- <button pButton type="button" label="Buscar" class="p-button-rounded" icon="pi pi-search" iconPos="left"></button> -->
-  <button pButton pRipple type="button" label="Cadastrar cliente" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left" (click)="addCliente(nomeCliente.value, dataNascCliente.value); nomeCliente.value=''; dataNascCliente.value=''"></button>
+  
+  <label for="nome">Nome:</label>
+  <input pInputText type="text" placeholder="Digite o nome do cliente" id="nome" #nomeCliente>
+  <label for="prof">Profissão:</label>
+  <input pInputText type="text" placeholder="Profissão" id="prof" #profissao>
+  <label for="tel">Telefone:</label>
+  <p-inputMask mask="(99) 99999-9999" placeholder="(99) 99999-9999" id="tel" #telefone></p-inputMask>
+  <label for="dataNasc">Data de Nascimento:</label>
+  <input pInputText type="date" id="dataNasc" #dataNascCliente>
+  <label for="endereco">Endereço:</label>
+  <input pInputText type="text" placeholder="Avenida praia de genipabu, 2093 - Ponta Negra, Natal/RN" id="endereco" #endereco>
+  <button pButton pRipple type="button" label="Cadastrar cliente" class="p-button-rounded p-button-success" icon="pi pi-plus" iconPos="left" (click)="addCliente(nomeCliente.value, dataNascCliente.value, telefone.value, profissao.value, endereco.value);"></button>
+
 </div>

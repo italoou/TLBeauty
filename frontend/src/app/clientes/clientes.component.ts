@@ -18,12 +18,11 @@ export class ClientesComponent implements OnInit {
   }
 
   getClientes(){
-    this.clientesService.getClientes().subscribe(clientes => this.clientes = clientes)
-    // this.clientes.push({nome: "italo lima", dataNasc: "09/11/1999", ultimaVis:"20/06/2022"});
-    // this.clientes.push({nome: "italo lima", dataNasc: "09/11/1999", ultimaVis:"20/06/2022"});
-    // this.clientes.push({nome: "italo lima", dataNasc: "09/11/1999", ultimaVis:"20/06/2022"});
-    // this.clientes.push({nome: "italo lima", dataNasc: "09/11/1999", ultimaVis:"20/06/2022"});
-    // this.clientes.push({nome: "italo lima", dataNasc: "09/11/1999", ultimaVis:"20/06/2022"});
+    this.clientesService.getClientes().subscribe(clientes => this.clientes = clientes);
+    
+    
   }
+
+  
 
 }

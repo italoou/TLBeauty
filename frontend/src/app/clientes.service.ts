@@ -24,7 +24,7 @@ export class ClientesService {
     return this.http.get<Cliente[]>(`${this.url}/clientes`);
   }
 
-  addCliente(cliente: Cliente): Observable<Cliente[]>{
-    return this.http.post<Cliente[]>(`${this.url}/clientes`, cliente, this.httpOptions);
+  addCliente(cliente: Cliente): Observable<Cliente>{
+    return this.http.post<Cliente>(`${this.url}/clientes`, cliente, this.httpOptions);
   } 
 }

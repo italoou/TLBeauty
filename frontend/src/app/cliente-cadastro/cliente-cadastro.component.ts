@@ -15,18 +15,19 @@ export class ClienteCadastroComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addCliente(nome: string, dataNasc: string){
+  async addCliente(nome: string, dataNasc: string, telefone: string, profissao?: string, endereco?: string){
     nome = nome.trim();
     dataNasc = dataNasc.trim();
+    telefone = telefone.trim();
 
-    if(!nome || !dataNasc){
+    if(!nome || !dataNasc || !telefone){
       return;
     }
 
     const ultimaVis = "00/00/0000";
     
-    this.clientesService.addCliente({nome, dataNasc, ultimaVis} as Cliente)
-      .subscribe(response => this.router.navigate(['/clientes'])
+    await this.clientesService.addCliente({nome, dataNasc, telefone, endereco, profissao, ultimaVis} as Cliente)
+      .subscribe(response => this.router.navigate([`/clientes/${response.id}`])
     );
 
   }

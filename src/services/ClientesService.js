@@ -30,7 +30,7 @@ class ClientesService{
     return JSON.parse(clients);
   }
 
-  async addClientes({nome , dataNasc, ultimaVis}){
+  async addClientes({nome , dataNasc, telefone, endereco, profissao, ultimaVis}){
     const fs = require('fs')
 
     // const data = {nome: "junior Lima", dataNasc: "09/11/1999", ultimaVis: "02/10/2022"};
@@ -41,17 +41,13 @@ class ClientesService{
 
     const id = jsonClients.length;
 
-    const cliente = {"id": id, "nome": nome, "dataNasc": dataNasc, "ultimaVis": ultimaVis};
-    
-    console.log(cliente);
+    const cliente = {"id": id, "nome": nome, "dataNasc":  dataNasc, "telefone": telefone, "endereco": endereco, "profissao": profissao, "ultimaVis": ultimaVis};
 
     jsonClients.push(cliente);
 
-    // console.log(jsonClients);
-
     await fs.writeFileSync('src/database.json', JSON.stringify(jsonClients));
 
-    return jsonClients;
+    return cliente;
 
   }
 };

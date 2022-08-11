@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ClientesService {
-  private url = 'http://0.0.0.0:8080'
+  private url = 'http://192.168.1.19:8080'
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     
